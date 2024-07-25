@@ -4,7 +4,7 @@ export default function app() {
   return (
   <div>
     <h1>Root component</h1>
-    <UserProfile/>
+    <UserProfile age={20} />
   </div>
 );
 }
