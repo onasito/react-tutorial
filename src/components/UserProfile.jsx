@@ -7,6 +7,7 @@ export function UserProfile(props) {
     <UserUsername username="bob" />
     <b>Age: </b>
     <span>{props.age}</span>
+    <UserFavoriteFoods />
   </div>
   );
 }
