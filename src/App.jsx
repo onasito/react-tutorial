@@ -9,11 +9,18 @@ export default function app() {
   return (
   <div>
     <h1>Root component</h1>
-    <UserProfile age={20} 
+    <UserProfile 
+    username = "Bob"
+    age={20} 
     isLoggedIn={true} 
     favoriteFoods={[
       {
-        name: "sushi"
+        name: "Sushi",
+        id: "sushi",
+      },
+      {
+        name: "pizza",
+        id: "Pizza",
       },
     ]}
     callMe ={callMe}
