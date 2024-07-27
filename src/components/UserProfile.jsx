@@ -5,12 +5,14 @@ import { UserUsername } from "./UserUsername";
 
 export function UserProfile(props) {
   return (
-  <div id="user-profile">
-    <UserUsername username={props.username} />
+  <>
     <b>Age: </b>
     <span>{props.age}</span>
-    <UserFavoriteFoods />
-  </div>
+    <>
+      <UserUsername username={props.username} />
+      <UserFavoriteFoods />
+    </>
+  </>
   );
 }
 
