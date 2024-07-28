@@ -1,4 +1,5 @@
 import React from 'react';
+import { UserDetails } from './components/UserDetails';
 
 export default function app() {
   const mockUsers = [
@@ -12,26 +13,24 @@ export default function app() {
       username: 'michael',
       email: "michael@ansonthedev.com",
     },
+    {
+      id: 3,
+      username: "anson",
+      email: "anson@ansonthedev.com"
+    },
+    {
+      id: 4,
+      username: "michael",
+      email: "michael@ansonthedev.com"
+    },
   ]
 
   return (
     <div>
-        {mockUsers.map((user)=> 
-        {
-          return ( 
-            <div key={user.id}>
-              <b>ID: </b>
-              <span>{user.id}</span>
-              <br />
-              <b>Username: </b> 
-              <span>{user.username}</span>
-              <br />
-              <b>Email: </b>
-              <span>{user.email}</span>
-              <br />
-            </div>
-          );
-        })}
-      </div>
+      {mockUsers.map((user)=> 
+      {
+        return <UserDetails key={user.id} user={user}/>;
+      })}
+    </div>
   )
 }
