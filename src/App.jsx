@@ -1,36 +1,17 @@
-import React from 'react';
-import { UserDetails } from './components/UserDetails';
+export default function App() {
+  const isAuthenticated = false;
 
-export default function app() {
-  const mockUsers = [
-    {
-      id: 1,
-      username: 'anson',
-      email: "anson@ansonthedev.com"
-    },
-    {
-      id: 2,
-      username: 'michael',
-      email: "michael@ansonthedev.com",
-    },
-    {
-      id: 3,
-      username: "anson",
-      email: "anson@ansonthedev.com"
-    },
-    {
-      id: 4,
-      username: "michael",
-      email: "michael@ansonthedev.com"
-    },
-  ]
+  if (isAuthenticated) {
+    return (
+      <div>
+        <h1>Welcome, User!</h1>
+      </div>
+    );
+  }
 
   return (
     <div>
-      {mockUsers.map((user)=> 
-      {
-        return <UserDetails key={user.id} user={user}/>;
-      })}
+      <span>You are not logged in</span>
     </div>
-  )
+  );
 }
