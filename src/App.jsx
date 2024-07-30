@@ -1,17 +1,13 @@
 export default function App() {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
-  if (isAuthenticated) {
-    return (
-      <div>
-        <h1>Welcome, User!</h1>
-      </div>
-    );
-  }
-
-  return (
+  return isAuthenticated ? (
+  <div>
+    <h1>Welcome, User!</h1>
+  </div>
+   ) : (
     <div>
-      <span>You are not logged in</span>
+      <h1>You are not logged in</h1>
     </div>
-  );
+   );
 }
