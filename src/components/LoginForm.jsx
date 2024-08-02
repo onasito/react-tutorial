@@ -3,6 +3,8 @@ export function LoginForm() {
     <form 
       onSubmit={(e)=> {
         e.preventDefault();
+        const formData = new FormData(e.target);
+        console.log(formData.get("username"));
       }}
     >
       <label htmlFor="username">Username</label>
@@ -10,9 +12,10 @@ export function LoginForm() {
       <input 
         id="username" 
         onChange={(e)=> { 
-          console.log(e.target.value);
+          console.log(`Username: ${e.target.value}`);
         }}
-        />
+        name="username"
+      />
       <br/>
       <label htmlFor="password">Password</label>
       <br />
@@ -22,6 +25,7 @@ export function LoginForm() {
         onChange={(e)=> {
           console.log(`Password: ${e.target.value}`)
         }}
+        name="password"
       />
       <br />
       <button>Login</button>
