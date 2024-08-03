@@ -4,7 +4,8 @@ export function LoginForm() {
       onSubmit={(e)=> {
         e.preventDefault();
         const formData = new FormData(e.target);
-        console.log(formData.get("username"));
+        const username = formData.get("username")
+        const password = formData.get("password")
       }}
     >
       <label htmlFor="username">Username</label>
