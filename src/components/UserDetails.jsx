@@ -19,7 +19,17 @@ export function UserDetails({ user, setUsers }) {
         </button>
         <button>Delete</button>
         <button onClick={()=> {
-          
+          setUsers(
+            (currentUsersState) => {
+              return currentUsersState.map(
+                (currentUser) => {
+                  if (currentUser.id === user.id)
+                    return {...currentUser, username: username, email: email};
+                  else return currentUser;
+                } 
+              )
+            }
+          )
         }}>Save</button>
       </div>
       <div>
