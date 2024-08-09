@@ -17,20 +17,19 @@ export function UserDetails({ user, setUsers }) {
         >
           Edit
         </button>
-        <button>Delete</button>
-        <button onClick={()=> {
+        <button onClick={() => {
+          setUsers((currentUserState) => currentUserState.filter(
+            (currentUser) => currentUser.id !== user.id
+          ));
+        }}>Delete</button>
+        {isEditing && (<button onClick={()=> {
           setUsers(
-            (currentUsersState) => {
-              return currentUsersState.map(
-                (currentUser) => {
-                  if (currentUser.id === user.id)
-                    return {...currentUser, username: username, email: email};
-                  else return currentUser;
-                } 
-              )
-            }
-          )
-        }}>Save</button>
+            (currentUsersState) => 
+              currentUsersState.map(
+                (currentUser) => currentUser.id === user.id ? ({...currentUser, username, email}) : currentUser)
+              );
+              setIsEditing(false);
+        }}>Save</button>)}
       </div>
       <div>
         <b>ID: </b>
