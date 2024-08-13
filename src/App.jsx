@@ -11,9 +11,11 @@ export default function App() {
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users', {
-      method 'GET',
+      method: 'GET',
+    }).then((response) => {
+      console.log(response);
     })
-  });
+  })
 
   return (
     <div>
