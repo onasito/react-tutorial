@@ -9,6 +9,12 @@ export default function App() {
     document.title = "React Tutorial " + counter;
   }, [sync]);
 
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users', {
+      method 'GET',
+    })
+  });
+
   return (
     <div>
       <div>
