@@ -13,8 +13,10 @@ export default function App() {
     fetch('https://jsonplaceholder.typicode.com/users', {
       method: 'GET',
     }).then((response) => {
-      console.log(response);
-    })
+      return response.json();
+    }).then((data) => {
+      console.log(data);
+    });
   })
 
   return (
