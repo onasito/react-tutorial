@@ -20,14 +20,17 @@ export default function App() {
           { signal: controller.signal }
         );
         const json = await response.json();
-        console.log(json)
+        console.log(json);
+        console.log(controller.signal);
       } catch(err) {
         console.log(err)
       }
     }
     fetchUsers();
-
-    
+    return () => {
+      controller.abort();
+      console.log(controller.signal);
+    }
   })
 
   return (
