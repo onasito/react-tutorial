@@ -8,6 +8,9 @@ export function PostContent({data}) {
 
 
   return (
-    <div>{userContextData.email}</div>
+    <div>
+      <PostContentButtons />
+      {userContextData.email}
+    </div>
   )
 }
