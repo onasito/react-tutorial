@@ -5,6 +5,20 @@ export function PostContentButtons({data}) {
 
 
   return (
-    <div>{userContextData.id}</div>
-  )
+    <div>
+      <div>
+        <span>PostContentButtons</span>
+      </div>
+      {id}
+      <br />
+      <button onClick={() => {
+        setUserData((currentState) => ({...currentState, 
+            displayName: "Updated Display Name",
+          }));
+        }}
+      >
+        Click Me
+      </button>
+    </div>
+  );
 }

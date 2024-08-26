@@ -10,6 +10,9 @@ export function PostContainer() {
 
   return (
     <div>
+      <div>
+        <span>PostContainer</span>
+      </div>
       <PostContent data={data} />
       <div>{userContextData.displayName}</div>
     </div>
